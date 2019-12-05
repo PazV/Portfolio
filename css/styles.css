@@ -1,0 +1,102 @@
+.animate span{
+	display: block;
+	position: relative;
+	text-align: center;
+}
+
+.animate.backwards > span{
+	animation: animateBackwards 1s ease-in-out forwards;
+}
+.animate.forwards > span{
+	animation: animateForwards 1s ease-in-out forwards;
+}
+
+.animate.mixed > span:nth-child(even){
+	animation: animateBackwards 1s ease-in-out
+forwards;
+}
+.animate.mixed > span:nth-child(odd){
+	animation: animateForwards 1s ease-in-out
+forwards;
+}
+@keyframes animateForwards {
+	from { top: 0; transform: rotate(0deg); }
+	to { top: .9em; transform: rotate(-15deg); }
+}
+@keyframes animateBackwards {
+	from { top: 0; transform: rotate(0deg); }
+	to { top: 1em; transform: rotate(25deg); }
+}
+
+.div-paz{
+	height:300px;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	align-content: center;
+}
+@keyframes drop{
+	0% {top:0px;}
+	100% {top:300px;}
+}
+@keyframes rotate-1 {
+
+	0% {transform: rotate(0deg);}
+	/* 25% {transform: rotate();} */
+	50% {transform: rotate(0deg);}
+	75% {transform: rotate(-15deg);}
+	100% {transform: rotate(50deg);}
+}
+
+@keyframes rotate-11{
+	0% {transform:rotate(50deg);}
+	25% {transform:rotate(-35deg);}
+	50% {transform:rotate(20deg);}
+	75% {transform:rotate(-5deg);}
+	100% {transform: rotate(2deg);}
+}
+
+@keyframes rotate-2 {
+	0% {transform: rotate(0deg);}
+	/* 25% {transform: rotate();} */
+	50% {transform: rotate(0deg);}
+	75% {transform: rotate(45deg);}
+	100% {transform: rotate(10deg);}
+}
+
+@keyframes rotate-22{
+	0% {transform: rotate(10deg);}
+	100% {transform: rotate(0deg);}
+}
+
+@keyframes drop-bouncing{
+	0% {top:0px;}
+	25% {top:300px;}
+	45% {top:240px;}
+
+	68% {top:300px;}
+	76% {top:265px;}
+	86% {top:300px;}
+	94% {top:285px;}
+	100% {top:300px;}
+}
+.name-1,.name-2,.name-3{
+	font-size:5em;
+	position:relative;
+}
+
+.name-1{
+	color:#FF5733;
+	animation:rotate-1 0.5s linear 0.3s forwards,rotate-11 1s linear 0.8s forwards;
+	/* animation:drop 0.6s cubic-bezier(0.23, 1, 0.32, 1) 1.4s forwards, rotate-1 2s cubic-bezier(0.86, 0, 0.07, 1) forwards; */
+}
+.name-2{
+	color:#3374FF;
+	left:-15px; /*Para que se encime un poco sobre la letra de la izquierda*/
+	animation:rotate-2 0.8s linear forwards, drop-bouncing 1s ease-out 0.8s forwards, rotate-22 0.8s ease 1.8s forwards;
+	/* animation:drop 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.6s forwards, rotate-2 1s cubic-bezier(0.86, 0, 0.07, 1)  forwards; */
+}
+.name-3{
+	color:#FFEC33;
+	animation:drop 0.6s cubic-bezier(0.23, 1, 0.32, 1) 1.2s forwards;
+}
