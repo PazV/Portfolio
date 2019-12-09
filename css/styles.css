@@ -70,16 +70,43 @@ forwards;
 }
 
 @keyframes drop-bouncing{
-	0% {top:0px;}
-	25% {top:300px;}
-	45% {top:240px;}
-
-	68% {top:300px;}
-	76% {top:265px;}
-	86% {top:300px;}
-	94% {top:285px;}
-	100% {top:300px;}
+	/* 0% {transform: translateY(0px);}
+	25% {transform: translateY(120px) scale(0.7);}
+	45% {transform: translateY(80px) scale(1);}
+	68% {transform: translateY(120px) scale(0.8);}
+	76% {transform: translateY(90px) scale(1);}
+	86% {transform: translateY(120px) scale(0.9);}
+	94% {transform: translateY(105px) scale(1);}
+	100% {transform: translateY(120px) scale(1);} */
+	/* 0% {transform: translateY(0px);}
+	25% {transform: translateY(120px);}
+	45% {transform: translateY(80px);}
+	68% {transform: translateY(120px);}
+	76% {transform: translateY(90px);}
+	86% {transform: translateY(120px);}
+	94% {transform: translateY(105px);}
+	100% {transform: translateY(120px);} */
+	0% {transform:translateY(0px) scale(1);}
+	25% {transform: translateY(250px) scale(0.8);}
+	45% {transform: translateY(90px) scale(1);}
+	68% {transform: translateY(250px) scale(0.85);}
+	76% {transform: translateY(100px) scale(1);}
+	86% {transform: translateY(250px) scale(0.95);}
+	94% {transform: translateY(125px) scale(1);}
+	100% {transform: translateY(250px) scale(1);}
 }
+
+@keyframes  drop-bouncing2{
+	0% {transform: translateY(0px) scale(1);}
+	25%{transform: translateY(250px) scale(0.85);}
+	50%{transform: translateY(200px) scale(1.1);}
+	70%{transform: translateY(250px) scale(0.9);}
+	85%{transform: translateY(230px) scale(1.05);}
+	90%{transform: translateY(250px) scale(0.95);}
+	95%{transform: translateY(240px) scale(1.08);}
+	100%{transform: translateY(250px) scale(1);}
+}
+
 .name-1,.name-2,.name-3{
 	font-size:5em;
 	position:relative;
@@ -93,10 +120,14 @@ forwards;
 .name-2{
 	color:#3374FF;
 	left:-15px; /*Para que se encime un poco sobre la letra de la izquierda*/
-	animation:rotate-2 0.8s linear forwards, drop-bouncing 1s ease-out 0.8s forwards, rotate-22 0.8s ease 1.8s forwards;
+	/* animation:rotate-2 0.8s linear forwards, drop-bouncing 1s ease-out 0.8s forwards, rotate-22 0.8s ease 1.8s forwards; */
+	animation: drop-bouncing2 2s ease-out 0.8s;
+	animation-fill-mode: forwards;
 	/* animation:drop 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.6s forwards, rotate-2 1s cubic-bezier(0.86, 0, 0.07, 1)  forwards; */
 }
 .name-3{
 	color:#FFEC33;
-	animation:drop 0.6s cubic-bezier(0.23, 1, 0.32, 1) 1.2s forwards;
+	/* animation:drop 0.6s cubic-bezier(0.23, 1, 0.32, 1) 1.2s forwards; */
+	animation: drop-bouncing2 2s linear 1s;
+	animation-fill-mode: forwards;
 }
