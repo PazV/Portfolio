@@ -107,7 +107,29 @@ forwards;
 	100%{transform: translateY(250px) scale(1);}
 }
 
-.name-1,.name-2,.name-3{
+@keyframes drop-rotating{
+	0% {transform: translateY(0px);}
+	25%{transform: translateY(250px) rotate(30deg);}
+	50%{transform: translateY(200px) rotate(5deg);}
+	70%{transform: translateY(250px) rotate(-18deg);}
+	85%{transform: translateY(230px) rotate(-10deg);}
+	90%{transform: translateY(250px) rotate(6deg);}
+	95%{transform: translateY(240px) rotate(-2deg);}
+	100%{transform: translateY(250px) rotate(0); }
+}
+
+@keyframes windy{
+	0%{transform:translateY(0);}
+	25%{transform: translateY(250px);}
+	30% {transform: translateY(250px) rotateX(-3deg);}
+	35% {transform: translateY(250px) rotateX(6deg);}
+	60%{transform: translateY(250px) rotateX(-10deg);}
+	70%{transform: translateY(250px) rotateX(15deg);}
+	100% {transform: translateY(250px) rotateX(-65deg);}
+
+}
+
+.name-1,.name-2,.name-3, .name-4{
 	font-size:5em;
 	position:relative;
 }
@@ -121,13 +143,19 @@ forwards;
 	color:#3374FF;
 	left:-15px; /*Para que se encime un poco sobre la letra de la izquierda*/
 	/* animation:rotate-2 0.8s linear forwards, drop-bouncing 1s ease-out 0.8s forwards, rotate-22 0.8s ease 1.8s forwards; */
-	animation: drop-bouncing2 2s ease-out 0.8s;
+	animation: drop-rotating 2s linear 0.8s;
 	animation-fill-mode: forwards;
 	/* animation:drop 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.6s forwards, rotate-2 1s cubic-bezier(0.86, 0, 0.07, 1)  forwards; */
 }
 .name-3{
 	color:#FFEC33;
 	/* animation:drop 0.6s cubic-bezier(0.23, 1, 0.32, 1) 1.2s forwards; */
-	animation: drop-bouncing2 2s linear 1s;
+	animation:  drop-bouncing2 2s ease-in 1s;
+	animation-fill-mode: forwards;
+}
+
+.name-4{
+	color:#37b118;
+	animation: windy 2s linear 3s;
 	animation-fill-mode: forwards;
 }
